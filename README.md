@@ -5,7 +5,7 @@ The idea was to effectively create a low spectral power density wideband (for HF
 CDMA modulator and demodulator, for sending serial data over the air.
 
 The rough idea is as follows
- 1. input serial data
+  1. input serial data
   2. xor(sha512(callsign), input)
   3. xor(sha512(block_counter, input)
   4. data_to_bmp(512*block_count, input)
@@ -14,10 +14,10 @@ The rough idea is as follows
 decoding is similar
   1. take FFT(128.915MHz, 256kHz)
   2. discard phase data (for now, future implementation should use a less ridiculous modulation method)
-  3.  apply thresholding to raw float output (bool output = ( pixel_value <= median))
+  3. apply thresholding to raw float output (bool output = ( pixel_value <= median))
   4. turn those bools back into bytes
   5. xor(block_counter, input)
-  6. xor(sha512(transmitter_callsign), input
+  6. xor(sha512(transmitter_callsign), input)
   7. output serial terminal
 
 steps missing:
